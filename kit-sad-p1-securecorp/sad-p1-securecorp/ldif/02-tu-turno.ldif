@@ -11,3 +11,37 @@
 #   - Los grupos van en ou=groups. Mira en el enunciado cómo es un grupo.
 #   - En "member" va el DN COMPLETO de la persona, no solo su uid.
 
+dn: uid=cgonlos,ou=people,dc=securecorp,dc=local
+objectClass: inetOrgPerson
+objectClass: posixAccount
+cn: cgonlos
+sn: cgonlos
+givenName: Claudia
+uid: cgonlos
+uidNumber: 10001
+gidNumber: 10001
+homeDirectory: /home/cgonlos
+mail: cgonlos@securecorp.local
+
+dn: uid=mtorres,ou=people,dc=securecorp,dc=local
+objectClass: inetOrgPerson
+objectClass: posixAccount
+cn: Marta Torres
+sn: Torres
+givenName: Marta
+uid: mtorres
+uidNumber: 10003
+gidNumber: 10003
+homeDirectory: /home/mtorres
+mail: mtorres@securecorp.local
+
+dn: cn=rrhh,ou=groups,dc=securecorp,dc=local
+objectClass: groupOfNames
+cn: rrhh
+member: uid=lromero,ou=people,dc=securecorp,dc=local
+member: uid=mtorres,ou=people,dc=securecorp,dc=local
+
+dn: cn=sistemas,ou=groups,dc=securecorp,dc=local
+objectClass: groupOfNames
+cn: sistemas
+member: uid=cgonlos,ou=people,dc=securecorp,dc=local

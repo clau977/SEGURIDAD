@@ -5,10 +5,10 @@
 dn: cn=config
 changetype: modify
 replace: olcTLSCACertificateFile
-olcTLSCACertificateFile: ____ (el certificado de la CA)
+olcTLSCACertificateFile: /etc/ldap/tls/ca.crt
 -
 replace: olcTLSCertificateFile
-olcTLSCertificateFile: ____ (el certificado del servidor)
+olcTLSCertificateFile: /etc/ldap/tls/ldap.crt
 -
 replace: olcTLSCertificateKeyFile
-olcTLSCertificateKeyFile: ____ (la clave privada del servidor)
+olcTLSCertificateKeyFile: /etc/ldap/tls/ldap.key

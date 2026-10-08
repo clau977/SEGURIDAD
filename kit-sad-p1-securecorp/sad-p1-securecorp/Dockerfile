@@ -28,6 +28,10 @@ RUN printf '%s\n' \
 COPY arranque-servidor.sh /usr/local/bin/arranque-servidor.sh
 RUN chmod +x /usr/local/bin/arranque-servidor.sh
 
+#Copiar la CA local e indicarla en ldap.conf para TLS_CACERT
+COPY ca.crt /etc/ssl/certs/ca.crt
+RUN echo "TLS_CACERT /etc/ssl/certs/ca.crt" >> /etc/ldap/ldap.conf
+
 # El prompt dice siempre en qué máquina estás (en rojo el servidor, en verde el cliente)
 RUN echo 'if [ "$(hostname)" = servidor ]; then PS1="\[\e[1;31m\]root@SERVIDOR\[\e[0m\]:\w# "; else PS1="\[\e[1;32m\]root@CLIENTE\[\e[0m\]:\w# "; fi' >> /root/.bashrc
 
